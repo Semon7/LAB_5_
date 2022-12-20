@@ -13,7 +13,7 @@ int main()
     BankAccount max_acc(1530, "Max", 7500, "Withdraw cash");
 
     
-    semen_acc.addbalance(10000);
+    semen_acc.add_balance(10000);
     
     
     Bank acc;
