@@ -8,39 +8,40 @@ class BankAccount
 private:
 
 
-    string Owner_name;
-    string Replenish_balance;
-    string Withdraw_cash;
+    string owner_name;
+    string replenish_balance;
+    string withdraw_cash;
 
 public:
 
-    int Balance;
-    int ID;
+    int balance_of_acc;
+    int id_of_acc;
     double amoumt;
     int amount;
-    int Getid()
+    
+    int get_id()
     {
-        return ID;
+        return id_of_acc;
     }
 
-    string Getowner_name()
+    string get_owner_name()
     {
-        return Owner_name;
+        return owner_name;
     }
 
-    int Getbalance()
+    int get_balance()
     {
-        return Balance;
+        return balance_of_acc;
     }
 
-    string GetReplenish_balance()
+    string get_replenish_balance()
     {
-        return Replenish_balance;
+        return replenish_balance;
     }
 
-    string GetWithdraw_cash()
+    string get_withdraw_cash()
     {
-        return Withdraw_cash;
+        return withdraw_cash;
     }
 
 
@@ -48,24 +49,24 @@ public:
     {
     }
 
-    BankAccount(int id, string ownername, int balance, string  withdraw_cash)
+    BankAccount(int id_of_acc, string owner_name, int balance_of_acc, string  withdraw_cash)
     {
-        ID = id;
-        Owner_name = ownername;
-        Balance = balance;
-        Withdraw_cash = withdraw_cash;
+        this->id_of_acc = id_of_acc;
+        this->owner_name = owner_name;
+        this->balance_of_acc = balance_of_acc;
+        this->withdraw_cash = withdraw_cash;
     }
 
 
 
-    void addbalance(int amount)
+    void add_balance(int amount)
     {
-        Balance += amount;
+        balance_of_acc += amount;
     }
 
-    void showAccount()
+    void show_account()
     {
-        cout << "_________Your Bank Account_________" << "\n\n    ID: " << ID << "\n    Owner Name: " << Owner_name << "\n    Balance: " << Balance << "\n    Withdraw cash " << endl << endl;
+        cout << "_________Your Bank Account_________" << "\n\n    ID: " << id_of_acc << "\n    Owner Name: " << owner_name << "\n    Balance: " << balance_of_acc << "\n    Withdraw cash " << endl << endl;
 
     }
 };
@@ -83,11 +84,11 @@ public:
         number++;
     }
 
-    void showallAccounts()
+    void ShowallAccounts()
     {
         for (int i = 0; i < number; i++)
         {
-            ArrayBankAccount[i].showAccount();
+            ArrayBankAccount[i].show_account();
         }
 
     }
@@ -96,7 +97,7 @@ public:
     {
         for (int t = 0; t < number; t++)
         {
-            if (ArrayBankAccount[t].ID == AccountID)
+            if (ArrayBankAccount[t].id_of_acc == AccountID)
             {
                 for (int p = 0; p < number; p++)
                 {
@@ -121,7 +122,7 @@ public:
         {
             for (int j = 1; j < number; j++)
             {
-                if (ArrayBankAccount[j].Balance > ArrayBankAccount[j - 1].Balance)
+                if (ArrayBankAccount[j].balance_of_acc > ArrayBankAccount[j - 1].balance_of_acc)
                 {
                     SortArray[0] = ArrayBankAccount[j];
                     ArrayBankAccount[j] = ArrayBankAccount[j - 1];
@@ -134,7 +135,7 @@ public:
 
         for (int i = 0; i < number; i++)
         {
-            ArrayBankAccount[i].showAccount();
+            ArrayBankAccount[i].show_account();
         }
     }
 
