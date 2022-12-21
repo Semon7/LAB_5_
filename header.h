@@ -84,7 +84,7 @@ public:
         number++;
     }
 
-    void ShowallAccounts()
+    void ShowAllAccounts()
     {
         for (int i = 0; i < number; i++)
         {
